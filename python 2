@@ -1,0 +1,45 @@
+import turtle
+import math
+
+# Setup layar
+screen = turtle.Screen()
+screen.bgcolor("black")
+screen.title("Hati dengan Turtle")
+
+# Buat pen
+pen = turtle.Turtle()
+pen.color ("red")
+pen.fillcolor("blue")
+pen.speed(5)
+pen.pensize(10)
+
+# Fungsi untuk menggambar hati
+def draw_heart():
+    pen.begin_fill()
+    pen.left(140)
+    pen.forward(180)
+    
+    for _ in range(200):
+        pen.right(1)
+        pen.forward(1)
+    
+    pen.left(120)
+    
+    for _ in range(200):
+        pen.right(1)
+        pen.forward(1)
+    
+    pen.forward(180)
+    pen.end_fill()
+
+draw_heart()
+
+# Tulis teks
+pen.penup()
+pen.goto(0, -50)
+pen.pendown()
+pen.color("white")
+pen.write("I ❤️ myself!", align="center", font=("Arial", 22, "bold"))
+
+pen.hideturtle()
+screen.exitonclick()
